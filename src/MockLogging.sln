@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockLogging.NetStandard", "MockLogging.NetStandard\MockLogging.NetStandard.csproj", "{477C55BC-DD36-461F-84A0-89C08CF4190B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8AFDA21A-7474-4C89-9D1B-C5AFE8DC3D7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockLogging.Tests", "MockLogging.Tests\MockLogging.Tests.csproj", "{87B1C4A4-1339-495C-8326-650CABE416D0}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MockLogging.Shared", "MockLogging.Shared\MockLogging.Shared.shproj", "{9509186B-226A-4102-B6D9-F96836F18B1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{477C55BC-DD36-461F-84A0-89C08CF4190B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{477C55BC-DD36-461F-84A0-89C08CF4190B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{477C55BC-DD36-461F-84A0-89C08CF4190B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{477C55BC-DD36-461F-84A0-89C08CF4190B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B1C4A4-1339-495C-8326-650CABE416D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B1C4A4-1339-495C-8326-650CABE416D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B1C4A4-1339-495C-8326-650CABE416D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B1C4A4-1339-495C-8326-650CABE416D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87B1C4A4-1339-495C-8326-650CABE416D0} = {8AFDA21A-7474-4C89-9D1B-C5AFE8DC3D7D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E09CB23-EEAF-4406-BC83-EF6A741B5724}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MockLogging.Shared\MockLogging.Shared.projitems*{477c55bc-dd36-461f-84a0-89c08cf4190b}*SharedItemsImports = 5
+		MockLogging.Shared\MockLogging.Shared.projitems*{9509186b-226a-4102-b6d9-f96836f18b1d}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal
