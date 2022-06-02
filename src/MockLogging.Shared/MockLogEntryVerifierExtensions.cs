@@ -5,34 +5,34 @@ namespace MockLogging
 {
     public static class MockLogEntryVerifierExtensions
     {
-        public static MockLogEntry HasLogLevel(this MockLogEntry entry, LogLevel logLevel)
+        public static MockLogEntry HasLogLevel(this MockLogEntry entry, LogLevel expectedLogLevel)
         {
-            if (entry.LogLevel != logLevel)
-                throw new InvalidOperationException($"Expected LogLevel '{logLevel}' but found '{entry.LogLevel}'.");
+            if (entry.LogLevel != expectedLogLevel)
+                throw new InvalidOperationException($"Expected LogLevel '{expectedLogLevel}' but found '{entry.LogLevel}'.");
 
             return entry;
         }
 
-        public static MockLogEntry HasEventId(this MockLogEntry entry, EventId eventId)
+        public static MockLogEntry HasEventId(this MockLogEntry entry, EventId expectedEventId)
         {
-            if (entry.EventId != eventId)
-                throw new InvalidOperationException($"Expected EventId '{eventId}' but found '{entry.EventId}'.");
+            if (entry.EventId != expectedEventId)
+                throw new InvalidOperationException($"Expected EventId '{expectedEventId}' but found '{entry.EventId}'.");
 
             return entry;
         }
 
-        public static MockLogEntry HasExceptionOfType<TException>(this MockLogEntry entry) where TException : Exception
+        public static MockLogEntry HasExceptionOfType<TExpectedException>(this MockLogEntry entry) where TExpectedException : Exception
         {
-            if (entry.Exception is TException)
-                throw new InvalidOperationException($"Expected Exception to be typeof '{typeof(TException)}' but found '{entry.Exception.GetType().Name}'.");
+            if (!(entry.Exception.GetType() == typeof(TExpectedException)))
+                throw new InvalidOperationException($"Expected Exception to be typeof '{typeof(TExpectedException)}' but found '{entry.Exception.GetType().FullName}'.");
 
             return entry;
         }
 
-        public static MockLogEntry HasMessage(this MockLogEntry entry, string message)
+        public static MockLogEntry HasMessage(this MockLogEntry entry, string expectedMessage)
         {
-            if (entry.Message != message)
-                throw new InvalidOperationException($"Expected LogLevel '{message}' but found '{entry.Message}'.");
+            if (entry.Message != expectedMessage)
+                throw new InvalidOperationException($"Expected Message '{expectedMessage}' but found '{entry.Message}'.");
 
             return entry;
         }
