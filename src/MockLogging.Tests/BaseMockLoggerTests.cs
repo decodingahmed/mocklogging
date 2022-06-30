@@ -17,7 +17,7 @@ namespace MockLogging.Tests
         [Fact]
         public void VerifyThatLogEntry_ShouldThrow_WhenLogsAreEmpty()
         {
-            Action action = () => logger.VerifyThatLogEntry();
+            Action action = () => logger.VerifyLogEntry();
             action.Should().Throw<InvalidOperationException>();
         }
 
@@ -51,12 +51,12 @@ namespace MockLogging.Tests
             logger.Log(LogLevel.Error, 500, new { Value = "erroring" }, new ArgumentException("invalid param value", "param"), (state, exception) => $"I am {state.Value}");
             logger.Log(LogLevel.Critical, 600, new { Value = "critically erroring" }, null, (state, exception) => $"I am {state.Value}");
 
-            var first = logger.VerifyThatLogEntry();
-            var second = logger.VerifyThatLogEntry();
-            var third = logger.VerifyThatLogEntry();
-            var fourth = logger.VerifyThatLogEntry();
-            var fifth = logger.VerifyThatLogEntry();
-            var sixth = logger.VerifyThatLogEntry();
+            var first = logger.VerifyLogEntry();
+            var second = logger.VerifyLogEntry();
+            var third = logger.VerifyLogEntry();
+            var fourth = logger.VerifyLogEntry();
+            var fifth = logger.VerifyLogEntry();
+            var sixth = logger.VerifyLogEntry();
 
             // Assert
             first.AssertExpectedValues(

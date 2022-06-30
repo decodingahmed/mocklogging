@@ -36,7 +36,7 @@ namespace MockLogging.Tests
         {
             // Act
             SingleValueInformationLog(logger, "some information", null);
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Information, "Informative message with some information.", 1000);
@@ -47,7 +47,7 @@ namespace MockLogging.Tests
         {
             // Act
             TwoValueDebugLog(logger, "foo", "bar", null);
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Debug, "Debug message with foo and bar values.", 2000);
@@ -58,7 +58,7 @@ namespace MockLogging.Tests
         {
             // Act
             SingleValueCriticalLog(logger, "important information", new Exception("something went wrong"));
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Critical, "Critical message with important information.", 4000, new Exception("something went wrong"));
@@ -69,7 +69,7 @@ namespace MockLogging.Tests
         {
             // Act
             ErrorLog(logger, new KeyNotFoundException("a key was not found"));
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Error, "Erroneous message.", 3000, new KeyNotFoundException("a key was not found"));
