@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,16 +12,16 @@ namespace MockLogging
 
     public class MockLogger : ILogger
     {
-        private readonly Queue<MockLogEntry> entries = new Queue<MockLogEntry>();
+        private readonly ConcurrentQueue<MockLogEntry> entries = new ConcurrentQueue<MockLogEntry>();
 
         public LogLevel MinimumLogLevel { get; set; } = LogLevel.Trace;
 
-        public MockLogEntry VerifyThatLogEntry()
+        public MockLogEntry VerifyLogEntry()
         {
-            if (!entries.Any())
-                throw new InvalidOperationException("No more log entries to verify");
+            if (entries.TryDequeue(out var entry))
+                return entry;
 
-            return entries.Dequeue();
+            throw new InvalidOperationException("No more log entries to verify");
         }
 
         public void VerifyNoOtherLogEntries()

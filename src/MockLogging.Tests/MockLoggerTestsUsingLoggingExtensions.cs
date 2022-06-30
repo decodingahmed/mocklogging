@@ -14,7 +14,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogTrace("my trace message");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Trace, "my trace message");
@@ -25,7 +25,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogTrace("my trace message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Trace, "my trace message with value");
@@ -36,7 +36,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogTrace(100, "my trace message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Trace, "my trace message with value", new EventId(100));
@@ -47,7 +47,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogTrace(new Exception("an error"), "my trace message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Trace, "my trace message with value", new Exception("an error"));
@@ -62,7 +62,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogDebug("my debug message");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Debug, "my debug message");
@@ -73,7 +73,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogDebug("my debug message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Debug, "my debug message with value");
@@ -84,7 +84,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogDebug(100, "my debug message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Debug, "my debug message with value", new EventId(100));
@@ -95,7 +95,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogDebug(new Exception("an error"), "my debug message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Debug, "my debug message with value", new Exception("an error"));
@@ -110,7 +110,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogInformation("my informative message");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Information, "my informative message");
@@ -121,7 +121,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogInformation("my informative message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Information, "my informative message with value");
@@ -132,7 +132,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogInformation(100, "my informative message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Information, "my informative message with value", new EventId(100));
@@ -143,7 +143,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogInformation(new Exception("an error"), "my informative message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Information, "my informative message with value", new Exception("an error"));
@@ -158,7 +158,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogWarning("my warning message");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Warning, "my warning message");
@@ -169,7 +169,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogWarning("my warning message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Warning, "my warning message with value");
@@ -180,7 +180,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogWarning(100, "my warning message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Warning, "my warning message with value", new EventId(100));
@@ -191,7 +191,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogWarning(new Exception("an error"), "my warning message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Warning, "my warning message with value", new Exception("an error"));
@@ -206,7 +206,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogError("my error message");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Error, "my error message");
@@ -217,7 +217,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogError("my error message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Error, "my error message with value");
@@ -228,7 +228,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogError(100, "my error message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Error, "my error message with value", new EventId(100));
@@ -239,7 +239,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogError(new Exception("an error"), "my error message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Error, "my error message with value", new Exception("an error"));
@@ -254,7 +254,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogCritical("my critical message");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Critical, "my critical message");
@@ -265,7 +265,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogCritical("my critical message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Critical, "my critical message with value");
@@ -276,7 +276,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogCritical(100, "my critical message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Critical, "my critical message with value", new EventId(100));
@@ -287,7 +287,7 @@ namespace MockLogging.Tests
         {
             // Act
             logger.LogCritical(new Exception("an critical"), "my critical message with {0}", "value");
-            var entry = logger.VerifyThatLogEntry();
+            var entry = logger.VerifyLogEntry();
 
             // Assert
             entry.AssertExpectedValues(LogLevel.Critical, "my critical message with value", new Exception("an critical"));
