@@ -64,7 +64,7 @@ jobs:
         echo "CommitDate: ${{ steps.gitversion.outputs.commitDate }}"
     
     - name: Build
-      run: dotnet build src/MockLogging.sln --no-restore
+      run: dotnet build src/MockLogging.sln
     - name: Test
       run: dotnet test src/MockLogging.sln --no-build --verbosity normal
 
