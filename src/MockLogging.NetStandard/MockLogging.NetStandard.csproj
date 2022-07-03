@@ -2,9 +2,32 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>MockLogging</PackageId>
+    <Version>$(Version)</Version>
+    <Authors>Ahmed Zaman (decodingahmed)</Authors>
+    <Company>Ahmed Zaman (decodingahmed)</Company>
+    <Description>Mock and validate calls to ILogger&lt;T&gt; using this library</Description>
+    <Copyright>Copyright 2022 Ahmed Zaman</Copyright>
+    <PackageProjectUrl>https://github.com/decodingahmed/mocklogging</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/decodingahmed/mocklogging</RepositoryUrl>
+    <PackageTags>logger;ilogger;mock;fake;stub</PackageTags>
+    <PackageLicenseFile>LICENCE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <Import Project="..\MockLogging.Shared\MockLogging.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENCE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
