@@ -12,7 +12,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/decodingahmed/mocklogging</RepositoryUrl>
     <PackageTags>logger;ilogger;mock;fake;stub</PackageTags>
-    <PackageLicenseFile>..\..\LICENCE</PackageLicenseFile>
+    <PackageLicenseFile>LICENCE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
@@ -20,6 +20,10 @@
 
   <ItemGroup>
     <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENCE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
