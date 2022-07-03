@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <NuspecFile>..\MockLogger.nuspec</NuspecFile>
   </PropertyGroup>
 
   <Import Project="..\MockLogging.Shared\MockLogging.Shared.projitems" Label="Shared" />
