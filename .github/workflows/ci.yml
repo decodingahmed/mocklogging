@@ -36,7 +36,7 @@ jobs:
         run: dotnet test src/MockLogging.sln --no-build --verbosity normal
 
       - name: Pack
-        run: dotnet pack src/MockLogging.sln -c Release -o package -p:Version=${{ steps.gitversion.outputs.fullSemVer }} -p:NuspecFile=/src/MockLogger.nuspec
+        run: dotnet pack src/MockLogging.sln -c Release -o package -p:Version=${{ steps.gitversion.outputs.fullSemVer }} -p:NuspecFile=src/MockLogger.nuspec
 
       - name: Publish
         run: dotnet nuget push package/*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGET_API_KEY}}
