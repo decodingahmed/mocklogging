@@ -10,6 +10,9 @@ namespace MockLogging
     {
     }
 
+    /// <summary>
+    /// Mock implementation of the <see cref="ILogger"/> interface 
+    /// </summary>
     public class MockLogger : ILogger
     {
         private readonly ConcurrentQueue<MockLogEntry> entries = new ConcurrentQueue<MockLogEntry>();
